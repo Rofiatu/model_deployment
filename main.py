@@ -6,7 +6,7 @@ user_name = st.text_input('Enter your name', 'Type your name')
 # create a button that displays a welcome message
 
 if(st.button('Please click me for your welcome message')):
-    st.text(f'Welcome to GoMyCode, {user_name}!')
+    st.text(f'It\'s a great day to know your BMI, {user_name}!')
 
 # # request to know gender
 
@@ -14,7 +14,7 @@ if(st.button('Please click me for your welcome message')):
 
 # instantiate weight
 
-weight = st.number_input('Enter your weight (in kgs)')
+weight = st.number_input('Please enter your weight (in kgs):')
 
 # instantiate the metric
 
@@ -23,16 +23,16 @@ metric = st.radio('Select your height format: ', ('Centimeters','Meters','Feet')
 # create a loop for each metric measurement
 
 try:
-    if(metric == 'cms'):
-        height = st.number_input('Centimeters')
+    if(metric == 'Centimeters'):
+        height = st.number_input('What is your height (in Centimeters)?: ')
         bmi = weight / ((height/100)**2)
 
-    elif(metric == 'meters'):
-        height = st.number_input('Meters')
+    elif(metric == 'Meters'):
+        height = st.number_input('What is your height (in Meters)?: ')
         bmi = weight / (height ** 2)
 
     else:
-        height = st.number_input('Feet')
+        height = st.number_input('What is your height (in Feet)?: ')
         bmi = weight / (((height/3.28))**2)
 
 # return the result of the calculation
@@ -81,13 +81,11 @@ Source: https://www.calculator.net/bmi-calculator.html?ctype=standard&cage=25&cs
 4. Fewer joint and muscle problems \n
 5. Improved fertility \n
 6. Better mobility and self-confidence \n
-
 In order to maintain a healthy BMI, you may do the following: \n
 1. Eat a balanced calorie-controlled diet \n
 2. Reduce sugar intake \n
 3. Exercise your heart regularly \n
 4. Move more \n
-
 Source: https://www.livi.co.uk/your-health/5-simple-tips-for-a-healthy-bmi/
         ''')
     elif(bmi >= 25 and bmi < 30):
